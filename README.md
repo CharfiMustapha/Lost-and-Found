@@ -30,10 +30,8 @@ Users can:
 * Register and log in.
 * Publish lost item announcements.
 * Browse all published announcements.
-* Search for specific lost items.
 * View announcement details.
 * Add comments to announcements.
-* Contact announcement owners through the platform.
 
 ### Admin Side
 
