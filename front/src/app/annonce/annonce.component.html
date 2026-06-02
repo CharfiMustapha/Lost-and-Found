@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />    
+    <meta name="description" content="" />
+    <!-- PAGE TITLE HERE -->
+    <title>Annonce</title>
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="page-wraper">
+        <!-- HEADER START -->
+        <app-header></app-header>
+        <!-- HEADER END -->
+        <!-- CONTENT START -->
+        <div class="page-content">
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(assets/images/banner/1.jpg);">
+                <div class="overlay-main site-bg-white opacity-01"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <div class="banner-title-outer">
+                            <div class="banner-title-name">
+                                <h2 class="wt-title">Liste des annonce</h2>
+                            </div>
+                        </div>
+                        <!-- BREADCRUMB ROW -->                            
+                            <div>
+                                <ul class="wt-breadcrumb breadcrumb-style-2">
+                                    <li><a href="/">Accueil</a></li>
+                                    <li>Liste des annonce</li>
+                                </ul>
+                            </div>
+                        
+                        <!-- BREADCRUMB ROW END -->                        
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+            <!-- OUR BLOG START -->
+            <div class="section-full p-t120  p-b90 site-bg-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-12">
+                            <div class="twm-jobs-list-wrap">
+                                <ul>
+                                     <li *ngFor="let annonce of listAnnonce">
+                                         <div class="twm-jobs-list-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <img [src]="annonce.image" alt="#">
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="/detail/{{annonce.id}}" class="twm-job-title">
+                                                     <h4>{{annonce.nom}}</h4>
+                                                 </a>
+                                                 <p class="twm-job-address">{{annonce.adresse}}</p>
+                                             </div>
+                                             <div class="twm-right-content">
+                                                 <a href="/detail/{{annonce.id}}" class="twm-jobs-browse site-text-primary">Parcourir l'annonce</a>
+                                             </div>
+                                         </div>
+                                     </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <!-- OUR BLOG END -->
+        </div>
+        <!-- CONTENT END -->
+        <!-- FOOTER START -->
+        <app-footer></app-footer>
+        <!-- FOOTER END -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edmin admin is super flexible, powerful, clean &amp; modern responsive bootstrap admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Edmin admin template, best javascript admin, dashboard template, bootstrap admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!-- tap to top-->
+    <div class="tap-top">
+      <svg class="feather">
+        <use href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#arrow-up"></use>
+      </svg>
+    </div>
+    <main class="page-wrapper compact-wrapper" id="pageWrapper">
+      <!-- Page header start -->
+      <app-header></app-header>
+      <!-- Page header end-->
+      <div class="page-body-wrapper">
+        <!-- Page sidebar start-->
+        <div class="overlay"></div>
+        <app-menu></app-menu>
+        <!-- Page sidebar end-->
+        <div class="page-body">
+          <div class="container-fluid">
+            <div class="row page-title">
+              <div class="col-sm-6">
+                <h3>Dashboard</h3>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid default-dashboard">
+            <div class="row">
+              <div class="col-md-6 col-xl-5">
+                <div class="card summary-card" style="width: 750px;"> 
+                  <div class="card-body" style="width: 500px;"> 
+                    <div class="row"> 
+                      <div class="col-sm-8 custom-width-1">
+                        <div class="project-cost">
+                          <ul class="d-flex">
+                            <li class="card-hover">
+                              <div class="d-flex bg-light-primary flex-column">
+                                <a href="/listeAdmin">
+                                  <div class="flex-grow-1">
+                                    <h6 class="f-w-500">Administrateur</h6>
+                                    <h4 class="f-w-700">{{totalAdmin}}</h4>
+                                  </div>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="card-hover">
+                              <div class="d-flex bg-light-secondary flex-column">
+                                <a href="/listeclient">
+                                  <div class="flex-grow-1">
+                                    <h6 class="f-w-500">Client</h6>
+                                    <h4 class="f-w-700">{{totalClient}}</h4>
+                                  </div>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="card-hover">
+                              <div class="d-flex bg-light-tertiary flex-column">
+                                <a href="listeannonce">
+                                  <div class="flex-grow-1">
+                                    <h6 class="f-w-500">Annonce</h6>
+                                    <h4 class="f-w-700">{{totalAnnonce}}</h4>
+                                  </div>
+                                </a>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 custom-width-2">
+                        <div class="charts-wrapper">
+                          <div class="chart-container" style="width: 400px; height: 400px;">
+                            <canvas id="percentageCanvas"></canvas>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <app-footer></app-footer>
+      </div>
+    </main>
+  </body>
+
+</html>

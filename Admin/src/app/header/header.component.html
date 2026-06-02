@@ -1,0 +1,33 @@
+<header class="page-header row">
+    <div class="logo-wrapper d-flex align-items-center col-auto"><a href="index.html"><img class="for-light" src="assets/images/logo/logo1.png" style="width: 169px; height: 58px;" alt="logo"><img class="for-dark" src="assets/images/logo/logo1.png" alt="logo"></a>
+    </div>
+    <div class="page-main-header col">
+      <div class="header-left d-lg-block d-none">
+      </div>
+      <div class="nav-right">
+        <ul class="header-right">
+          <h5>Contact</h5>
+          <li class="custom-dropdown"><a href="/listecontact">
+            <svg class="svg-color">
+              <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Message"></use>
+            </svg></a><span class="badge rounded-pill badge-tertiary">{{totalContact}}</span>
+        </li>
+          <li class="serchinput d-lg-none d-flex"><a class="search-mode">
+              <svg class="svg-color">
+                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Search"></use>
+              </svg></a>
+            <div class="form-group search-form">
+              <input type="text" placeholder="Search here...">
+            </div>
+          </li>          
+          <li class="profile-dropdown custom-dropdown">
+            <div class="d-flex align-items-center"><img src="../assets/images/profile.png" alt="">
+              <div class="flex-grow-1"> 
+                <h5>{{userDetails.nom}} {{userDetails.prenom}}</h5>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>

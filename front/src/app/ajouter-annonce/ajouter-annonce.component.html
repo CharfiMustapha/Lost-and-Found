@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />    
+    <meta name="description" content="" />
+    <!-- PAGE TITLE HERE -->
+    <title>Publier une annonce</title>
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+    
+</head>
+
+<body>
+	<div class="page-wraper">
+     
+        <!-- HEADER START -->
+        <app-header></app-header>
+        <!-- HEADER END -->
+      
+        <!-- CONTENT START -->
+        <div class="page-content">
+
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(assets/images/banner/1.jpg);">
+                <div class="overlay-main site-bg-white opacity-01"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <div class="banner-title-outer">
+                            <div class="banner-title-name">
+                                <h2 class="wt-title">Publier une annonce</h2>
+                            </div>
+                        </div>
+                        <!-- BREADCRUMB ROW -->                            
+                        
+                            <div>
+                                <ul class="wt-breadcrumb breadcrumb-style-2">
+                                    <li><a href="/">Accueil</a></li>
+                                    <li>Publier une annonce</li>
+                                </ul>
+                            </div>
+                        
+                        <!-- BREADCRUMB ROW END -->                        
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+           
+            <!-- CONTACT FORM -->
+            <div class="section-full twm-contact-one">   
+                <div class="section-content">
+                    <div class="container">
+                            
+                        <!-- CONTACT FORM-->
+                        <div class="contact-one-inner">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="contact-form-outer">
+                                        <!-- TITLE START-->
+                                        <div class="section-head left wt-small-separator-outer">
+                                            <h2 class="wt-title">Publier une annonce</h2>
+                                        </div>
+                                        <!-- TITLE END--> 
+                                        <form (ngSubmit)="addNewAnnonce()" [formGroup]="AnnonceForm">                                            
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group mb-3">
+                                                        <input name="nom" type="text" required class="form-control" placeholder="nom" formControlName="nom">
+                                                    </div>
+                                                    <div *ngIf="nom?.touched && nom?.invalid">
+                                                        <small class="text-danger" *ngIf="nom?.errors?.['required']">nom est obligatoire</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group mb-3">
+                                                        <input name="image" type="file" (change)="onSelectFile($event)" class="form-control" required placeholder="image" formControlName="image">
+                                                    </div>
+                                                    <div *ngIf="image?.touched && image?.invalid">
+                                                        <small class="text-danger" *ngIf="image?.errors?.['required']">image est obligatoire</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group mb-3">
+                                                        <textarea name="description" class="form-control" rows="3" placeholder="description" formControlName="description"></textarea>
+                                                    </div>
+                                                    <div *ngIf="description.touched && description.invalid">
+                                                        <small class="text-danger" *ngIf="description.errors?.['required']">description est obligatoire</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group mb-3">
+                                                        <input name="adresse" type="text" class="form-control" required placeholder="adresse" formControlName="adresse">
+                                                    </div>
+                                                    <div *ngIf="adresse?.touched && adresse?.invalid">
+                                                        <small class="text-danger" *ngIf="adresse?.errors?.['required']">adresse est obligatoire</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <button type="submit" class="site-button">Ajouter</button>
+                                                    <span [innerHtml]="this.messageCommande"></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- CONTENT END -->
+
+        <!-- FOOTER START -->
+        <app-footer></app-footer>
+        <!-- FOOTER END -->
+ 	</div>
+</body>
+</html>

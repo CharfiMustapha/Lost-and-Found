@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edmin admin is super flexible, powerful, clean &amp; modern responsive bootstrap admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Edmin admin template, best javascript admin, dashboard template, bootstrap admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <title>Ajouter admin</title>
+    
+  </head>
+  <body>
+    <!-- tap to top-->
+    <div class="tap-top">
+      <svg class="feather">
+        <use href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#arrow-up"></use>
+      </svg>
+    </div>
+    <!-- loader-->
+ 
+    <main class="page-wrapper compact-wrapper" id="pageWrapper">
+      <!-- Page header start -->
+      <app-header></app-header>
+      <!-- Page header end-->
+      <div class="page-body-wrapper">
+        <!-- Page sidebar start-->
+        <app-menu></app-menu>
+        <!-- Page sidebar end-->
+        <div class="page-body">
+          <div class="container-fluid">
+            <div class="row"> 
+              <div class="col-xl-12">
+                <div class="card">
+                  <div class="card-header pb-0">
+                    <h4>Ajouter Admin</h4>
+                  </div>
+                  <div class="card-body basic-wizard important-validation">
+                    <div id="msform">
+                      <form class="stepper-one row g-3 needs-validation custom-input" novalidate="" (ngSubmit)="addNewAdmin()" [formGroup]="AdminForm">
+                        <div class="col-sm-8">
+                          <label class="form-label" for="nomwizard">Nom<span class="font-danger">*</span></label>
+                          <input class="form-control" id="nomwizard" type="text" required="" placeholder="Nom" formControlName="nom">
+                        </div>
+                        <div *ngIf="nom?.touched && nom?.invalid">
+                          <small class="text-danger" *ngIf="nom?.errors?.['required']">nom est obligatoire</small>
+                        </div>
+                        <div class="col-sm-8">
+                          <label class="form-label" for="prenomwizard">Prenom<span class="font-danger">*</span></label>
+                          <input class="form-control" id="prenomwizard" type="text" required="" placeholder="Prenom" formControlName="prenom">
+                        </div>
+                        <div *ngIf="prenom?.touched && prenom?.invalid">
+                          <small class="text-danger" *ngIf="prenom?.errors?.['required']">prenom est obligatoire</small>
+                        </div>
+                        <div class="col-sm-8">
+                          <label class="form-label" for="email-basic-wizard">Email<span class="font-danger">*</span></label>
+                          <input class="form-control" id="email-basic-wizard" type="email" required="" placeholder="email" formControlName="email">
+                        </div>
+                        <div *ngIf="email?.touched && email?.invalid">
+                          <small class="text-danger" *ngIf="email?.errors?.['required']">email est obligatoire</small>
+                          <small class="text-danger" *ngIf="email?.errors?.['email']">Veuillez entrer une adresse email valide.</small>
+                        </div>
+                        <div class="col-8">
+                          <label class="col-sm-8 form-label" for="passwordwizard">Mot de passe<span class="font-danger">*</span></label>
+                          <input class="form-control" id="passwordwizard" type="password" placeholder="Entrer mot de passe" required="" formControlName="mp">
+                        </div>
+                        <div *ngIf="mp?.touched && mp?.invalid">
+                          <small class="text-danger" *ngIf="mp?.errors?.['required']">mot de passe est obligatoire</small>
+                        </div>
+                        <div class="col-8">
+                          <label class="col-sm-8 form-label" for="rolewizard">Role<span class="font-danger">*</span></label>
+                          <select class="form-select" formControlName="role" placeholder="role">
+                            <option value="superadmin">Super Admin</option>
+                            <option value="sousadmin">Sous Admin</option>
+                          </select>
+                        </div>
+                        <div *ngIf="role?.touched && role?.invalid">
+                          <small class="text-danger" *ngIf="role?.errors?.['required']">role est obligatoire</small>
+                        </div>
+                        <div class="col-8">
+                          <button type="submit" class="btn btn-primary">Ajouter</button>
+                          <span [innerHtml]="this.messageCommande"></span> 
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+          </div>
+          <!-- Container-fluid ends-->
+        </div>
+        <app-footer></app-footer>
+      </div>
+    </main>
+  </body>
+</html>

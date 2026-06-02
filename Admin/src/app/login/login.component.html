@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edmin admin is super flexible, powerful, clean &amp; modern responsive bootstrap admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Edmin admin template, best javascript admin, dashboard template, bootstrap admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <title>Login</title>
+  </head>
+  <body>
+    <!-- tap to top-->
+    <div class="tap-top">
+      <svg class="feather">
+        <use href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#arrow-up"></use>
+      </svg>
+    </div>
+    <!-- login page start-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-5 login_two_image"></div>
+        <div class="col-xl-7 p-0">    
+          <div class="login-card login-dark login-bg">
+            <div>
+              <div><a class="logo" href="index.html"><img class="img-fluid for-light" src="../assets/images/logo/logo1.png" alt="looginpage" style="width: 125px; height: 100px;"><img class="for-dark m-auto" src="../assets/images/logo1/dark-1" alt="logo" style="width: 15px; height: 15px;"></a></div>
+              <div class="login-main"> 
+                <form class="theme-form" (ngSubmit)="login()" [formGroup]="loginForm">
+                  <h2 class="text-center">Se connecter</h2>
+                  <p class="text-center">Entrez votre email &amp; mot de passe pour se connecter</p>
+                  <div class="form-group">
+                    <label class="col-form-label">Email</label>
+                    <input class="form-control" type="email" required="" placeholder="Test@gmail.com" formControlName="email">
+                  </div>
+                  <div *ngIf="email?.touched && email?.invalid">
+                    <small class="text-danger" *ngIf="email?.errors?.['required']">email est obligatoire</small>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-form-label">Mot de passe</label>
+                    <div class="form-input position-relative">
+                      <input class="form-control" type="password" name="login[password]" required="" placeholder="*********" formControlName="mp">
+                    </div>
+                    <div *ngIf="mp?.touched && mp?.invalid">
+                      <small class="text-danger" *ngIf="mp?.errors?.['required']">mot de passe est obligatoire</small>
+                    </div>
+                  </div>
+                  <div class="form-group mb-0 checkbox-checked">
+                    <div class="text-end mt-3"><button type="submit" class="btn btn-primary btn-block w-100 text-white" href="/">Se connecter</button></div>
+                    <span [innerHtml]="this.messageCommande"></span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </body>
+
+</html>

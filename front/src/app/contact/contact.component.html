@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />    
+    <meta name="description" content="" />
+    <!-- PAGE TITLE HERE -->
+    <title>Contact</title>
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="page-wraper">
+        <!-- HEADER START -->
+        <app-header></app-header>
+        <!-- HEADER END -->
+        <!-- CONTENT START -->
+        <div class="page-content">
+
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(assets/images/banner/1.jpg);">
+                <div class="overlay-main site-bg-white opacity-01"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <div class="banner-title-outer">
+                            <div class="banner-title-name">
+                                <h2 class="wt-title">Contactez-nous</h2>
+                            </div>
+                        </div>
+                        <!-- BREADCRUMB ROW -->                            
+                            <div>
+                                <ul class="wt-breadcrumb breadcrumb-style-2">
+                                    <li><a href="/">Accueil</a></li>
+                                    <li>Contactez-nous</li>
+                                </ul>
+                            </div>
+                        
+                        <!-- BREADCRUMB ROW END -->                        
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+           
+            <!-- CONTACT FORM -->
+            <div class="section-full twm-contact-one">   
+                <div class="section-content">
+                    <div class="container">
+                            
+                        <!-- CONTACT FORM-->
+                        <div class="contact-one-inner">
+                            <div class="row">
+
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="contact-form-outer">
+
+                                        <!-- TITLE START-->
+                                        <div class="section-head left wt-small-separator-outer">
+                                            <h2 class="wt-title">Envoie-nous un message</h2>
+                                            <p>N'hésitez pas à nous contacter et nous vous répondrons dans les plus brefs délais.</p>
+                                        </div>
+                                        <!-- TITLE END--> 
+
+                                        <form (ngSubmit)="addNewContact()" [formGroup]="ContactForm">                                            
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <input name="nom" type="text" required class="form-control" placeholder="nom" formControlName="nom">
+                                                    </div>
+                                                    <div *ngIf="nom?.touched && nom?.invalid">
+                                                        <small class="text-danger" *ngIf="nom?.errors?.['required']">nom est obligatoire</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <input name="email" type="email" class="form-control" required placeholder="Email" formControlName="email">
+                                                    </div>
+                                                    <div *ngIf="email?.touched && email?.invalid">
+                                                        <small class="text-danger" *ngIf="email?.errors?.['required']">email est obligatoire</small>
+                                                        <small class="text-danger" *ngIf="email?.errors?.['email']">Veuillez entrer une adresse email valide.</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <input name="tlf" type="text" class="form-control" required placeholder="telephone" formControlName="tlf">
+                                                    </div>
+                                                    <div *ngIf="tlf?.touched && tlf?.invalid">
+                                                        <small class="text-danger" *ngIf="tlf?.errors?.['required']">Le téléphone est obligatoire.</small>
+                                                        <small class="text-danger" *ngIf="tlf?.errors?.['minlength']">Le téléphone doit contenir au moins 8 chiffres.</small>
+                                                        <small class="text-danger" *ngIf="tlf?.errors?.['maxlength']">Le téléphone ne peut pas dépasser 8 chiffres.</small> 
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <input name="sujet" type="text" class="form-control" required placeholder="sujet" formControlName="sujet">
+                                                    </div>
+                                                    <div *ngIf="sujet?.touched && sujet?.invalid">
+                                                        <small class="text-danger" *ngIf="sujet?.errors?.['required']">sujet est obligatoire</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group mb-3">
+                                                        <textarea name="msg" class="form-control" rows="3" placeholder="Message" formControlName="msg"></textarea>
+                                                    </div>
+                                                    <div *ngIf="msg?.touched && msg?.invalid">
+                                                        <small class="text-danger" *ngIf="msg?.errors?.['required']">message est obligatoire</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <button type="submit" class="site-button">Ajouter</button>
+                                                    <span [innerHtml]="this.messageCommande"></span>
+                                                </div>
+                                                
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div> 
+
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="contact-info-wrap">
+
+                                        <div class="contact-info">
+                                            <div class="contact-info-section">  
+                                                    <div class="c-info-column">
+                                                        <div class="c-info-icon"><i class=" fas fa-map-marker-alt"></i></div>
+                                                        <h3 class="twm-title">Notre adresse</h3>
+                                                        <p><a href="https://www.google.com/maps/place/SOTIM/@36.8616178,10.2121983,16.98z/data=!4m6!3m5!1s0x12e2cb2a3b25dbf3:0xef3c54d3f970f024!8m2!3d36.8616363!4d10.2132545!16s%2Fg%2F11d_w4p6_s?entry=ttu&g_ep=EgoyMDI0MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ariana, Tunisie</a></p>                                                    
+                                                    </div>  
+                                                    <div class="c-info-column">
+                                                        <div class="c-info-icon custome-size"><i class="fas fa-mobile-alt"></i></div>
+                                                        <h3 class="twm-title">N'hésitez pas à nous contacter</h3>
+                                                        <p><a href="tel:+216-761-8331">+216 26 555 756</a></p>
+                                                    </div>
+                                                    <div class="c-info-column">
+                                                        <div class="c-info-icon"><i class="fas fa-envelope"></i></div>
+                                                        <h3 class="twm-title">Support</h3>
+                                                        <p><a href="mailto:Charfimustapha97@gmail.com">Charfimustapha97&#64;gmail.com</a></p>
+                                                    </div>
+                                            
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- CONTENT END -->
+        <!-- FOOTER START -->
+        <app-footer></app-footer>
+        <!-- FOOTER END -->
+ 	</div>
+</body>
+</html>

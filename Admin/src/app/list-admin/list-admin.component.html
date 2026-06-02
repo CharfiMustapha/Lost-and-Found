@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edmin admin is super flexible, powerful, clean &amp; modern responsive bootstrap admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Edmin admin template, best javascript admin, dashboard template, bootstrap admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <title>List admin</title>
+  </head>
+  <body>
+    <!-- tap to top-->
+    <div class="tap-top">
+      <svg class="feather">
+        <use href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#arrow-up"></use>
+      </svg>
+    </div>
+    <!-- loader-->
+
+    <main class="page-wrapper compact-wrapper" id="pageWrapper">
+      <!-- Page header start -->
+      <app-header></app-header>
+      <!-- Page header end-->
+      <div class="page-body-wrapper">
+        <!-- Page sidebar start-->
+        <app-menu></app-menu>
+        <!-- Page sidebar end-->
+        <div class="page-body">
+          <div class="container-fluid">
+            <div class="row page-title">
+              <div class="col-sm-6">
+                <h3>Liste Admin</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Container-fluid starts-->
+          <div class="container-fluid table-space basic_table">
+            <a href="/ajouterAdmin" type="submit" class="btn btn-primary" *ngIf="role=='superadmin'">Ajouter</a>
+            <div class="row"> 
+              <div class="col-sm-12">
+                <div class="card">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="b-b-primary">
+                          <th scope="col">Id</th>
+                          <th scope="col">Nom</th>
+                          <th scope="col">Prenom</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Role</th>
+                          <th scope="col" *ngIf="role=='superadmin'">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="b-b-tertiary" *ngFor="let admin of listAdmin">
+                          <td>{{admin.id}}</td>
+                          <td>{{admin.nom}}</td>
+                          <td>{{admin.prenom}}</td>
+                          <td>{{admin.email}}</td>
+                          <td>{{admin.role}}</td>
+                          <td *ngIf="role=='superadmin'">
+                            <a href="/modifieradmin/{{admin.id}}" type="submit" class="btn btn-success">Modifier</a>
+                            <button type="submit" (click)="Deleteadmin(admin)" class="btn btn-danger">Supprimer</button>
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div> 
+            </div>
+          </div>
+          <!-- Container-fluid starts-->
+        </div>
+        <app-footer></app-footer>
+      </div>
+    </main>
+  </body>
+</html>

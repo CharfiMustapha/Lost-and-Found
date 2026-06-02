@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />    
+    <meta name="description" content="" />
+    <!-- PAGE TITLE HERE -->
+    <title>Register</title>
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+</head>
+
+<body>
+	<div class="page-wraper">
+        <!-- HEADER START -->
+        <app-header></app-header>
+        <!-- HEADER END -->
+        <!-- CONTENT START -->
+        <div class="page-content">
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr" style="background-image:url(assets/images/banner/1.jpg);">
+                <div class="overlay-main site-bg-white opacity-01"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <div class="banner-title-outer">
+                            <div class="banner-title-name">
+                                <h2 class="wt-title">Register</h2>
+                            </div>
+                        </div>
+                        <!-- BREADCRUMB ROW -->                            
+                            <div>
+                                <ul class="wt-breadcrumb breadcrumb-style-2">
+                                    <li><a href="/">Home</a></li>
+                                    <li>Register</li>
+                                </ul>
+                            </div>
+                        <!-- BREADCRUMB ROW END -->                        
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+            <!-- Employer Account START -->
+            <div class="section-full p-t120  p-b90 site-bg-white bg-cover twm-ac-fresher-wrap" style="background-image:url(assets/images/background/pattern.jpg)">
+                <span class="twm-section-bg-img">
+                    <img src="assets/images/reg-bg2.png" alt="">
+                </span>
+                <div class="container">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-8 col-md-12">
+                            <div class="twm-right-section-panel-wrap2">
+                                <!--Filter Short By-->
+                                <div class="twm-right-section-panel site-bg-primary">
+                                    <!--Basic Information-->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading wt-panel-heading p-a20">
+                                            <h4 class="panel-tittle m-a0">Register</h4>
+                                        </div>
+                                        <div class="panel-body wt-panel-body p-a20 ">                                            
+                                        <form (ngSubmit)="addNewClient()" [formGroup]="ClientForm">
+                                            <div class="twm-tabs-style-1">
+                                                <div class="tab-content" id="myTab3Content">
+                                                    <div class="tab-pane fade show active" id="Personal">
+                                                        <div class="row">
+                                                                <div class="col-xl-6 col-lg-6 col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label>Nom</label>
+                                                                        <div class="ls-inputicon-box"> 
+                                                                            <input class="form-control" name="company_name" type="text" placeholder="nom" formControlName="nom">
+                                                                            <i class="fs-input-icon fa fa-user "></i>
+                                                                        </div>
+                                                                        <div *ngIf="nom?.touched && nom?.invalid">
+                                                                            <small class="text-danger" *ngIf="nom?.errors?.['required']">nom est obligatoire</small>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-xl-6 col-lg-6 col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label>Prenom</label>
+                                                                        <div class="ls-inputicon-box"> 
+                                                                            <input class="form-control" name="company_name" type="text" placeholder="prenom" formControlName="prenom">
+                                                                            <i class="fs-input-icon fa fa-user "></i>
+                                                                        </div>
+                                                                        <div *ngIf="prenom?.touched && prenom?.invalid">
+                                                                            <small class="text-danger" *ngIf="prenom?.errors?.['required']">prenom est obligatoire</small>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-xl-6 col-lg-6 col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label>Email</label>
+                                                                        <div class="ls-inputicon-box"> 
+                                                                            <input class="form-control" name="company_Email" type="email" placeholder="email" formControlName="email">
+                                                                            <i class="fs-input-icon fas fa-at"></i>
+                                                                        </div>
+                                                                        <div *ngIf="email?.touched && email?.invalid">
+                                                                            <small class="text-danger" *ngIf="email?.errors?.['required']">email est obligatoire</small>
+                                                                            <small class="text-danger" *ngIf="email?.errors?.['email']">Veuillez entrer une adresse email valide.</small>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div class="col-xl-6 col-lg-6 col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label>Mot de passe</label>
+                                                                        <div class="ls-inputicon-box"> 
+                                                                            <input class="form-control" name="company_Email" type="password" placeholder="mot de passe" formControlName="mp">
+                                                                            <i class="fs-input-icon fas fa-asterisk"></i>
+                                                                        </div>
+                                                                        <div *ngIf="mp?.touched && mp?.invalid">
+                                                                            <small class="text-danger" *ngIf="mp?.errors?.['required']">mot de passe est obligatoire</small>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xl-6 col-lg-6 col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label>Telephone</label>
+                                                                        <div class="ls-inputicon-box"> 
+                                                                            <input class="form-control" name="company_phone" type="tel" placeholder="telephone" formControlName="tlf">
+                                                                            <i class="fs-input-icon fa fa-phone-alt"></i>
+                                                                        </div>
+                                                                        <div *ngIf="tlf?.touched && tlf?.invalid">
+                                                                            <small class="text-danger" *ngIf="tlf?.errors?.['required']">telephone est obligatoire</small>
+                                                                            <small class="text-danger" *ngIf="tlf?.errors?.['minlength']">Le téléphone doit contenir au moins 8 chiffres.</small>
+                                                                            <small class="text-danger" *ngIf="tlf?.errors?.['maxlength']">Le téléphone ne peut pas dépasser 8 chiffres.</small>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>          
+                                                                <div class="col-xl-12 col-lg-12 col-md-12">                                  
+                                                                    <div class="text-left">
+                                                                        <button type="submit" class="site-button">register</button>
+                                                                        <span [innerHtml]="this.messageCommande"></span>
+                                                                    </div>
+                                                                </div>                                         
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                        </form>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>   
+            <!-- Employer Account START END -->
+            
+     
+        </div>
+        <!-- CONTENT END -->
+
+        <!-- FOOTER START -->
+        <app-footer></app-footer>
+        <!-- FOOTER END -->
+ 	</div>
+</body>
+</html>
