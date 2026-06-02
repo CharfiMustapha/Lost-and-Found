@@ -52,8 +52,6 @@ Each announcement contains:
 * Item title
 * Description
 * Location where the item was lost
-* Date of loss
-* Contact information
 * Image of the lost item (if available)
 
 ---
