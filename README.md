@@ -110,7 +110,7 @@ Make sure the following tools are installed:
 1. Navigate to the backend folder:
 
 ```bash
-cd backend
+cd lostandfound
 ```
 
 2. Configure the database connection in:
@@ -216,7 +216,3 @@ http://localhost:4201
 * AI-powered item matching.
 
 ---
-
-## Authors
-
-Developed as an academic project using Angular and Spring Boot.
