@@ -86,7 +86,7 @@ RetrouveMoi/
 │
 ├── admin/          # Admin-side Angular application
 │
-└── backend/        # Spring Boot backend API
+└── lostandfound/        # Spring Boot backend API
 ```
 
 ---
